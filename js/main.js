@@ -15,15 +15,20 @@ Game.prototype.render = function() {
   return this.$element;
 };
 
+//game library constructor
 function GameLibrary (title, games) {
   this.title = title;
   this.games = [];
 }
 
+//add games to the game library
+//not working?
 GameLibrary.prototype.addGames = function(instance){
   return this.games.push(instance);
 };
 
+//adds game libraries to the dom
+//not right?
 GameLibrary.prototype.render = function() {
   this.$element = $('<div>')
     .append('<h3>' + this.title + '</h3>')
@@ -42,9 +47,10 @@ var poker = new Game("Poker", "Card Games");
 var wow = new Game("World of Warcraft", "Computer Games");
 var minecraft = new Game("Minecraft", "Computer Games");
 
-//add games
-addGames(cards);
-
 //game libraries
 var cardGames = new GameLibrary ("Card Games");
+
+
+//add games
+addGames(cards);
 
