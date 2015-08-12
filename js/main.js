@@ -39,18 +39,26 @@ GameLibrary.prototype.render = function() {
 };
 
 //game instances
-var catan = new Game ("Settlers of Catan", "Board Games");
-var chess = new Game ("Chess", "Board Games");
-var cards = new Game("Cards Against Humanity", "Card Games");
-var rummy = new Game("Rummy", "Card Games");
-var poker = new Game("Poker", "Card Games");
-var wow = new Game("World of Warcraft", "Computer Games");
-var minecraft = new Game("Minecraft", "Computer Games");
+
 
 //game libraries
 var cardGames = new GameLibrary ("Card Games");
 
-
 //add games
-addGames(cards);
+cardGames.addGames(cards);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
