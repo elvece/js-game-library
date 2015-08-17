@@ -1,3 +1,11 @@
+//testing
+// var testArr = [];
+// var test = new Game("catan", "board game");
+// testArr.push(test);
+// console.log(testArr);
+// var board = new GameLibrary("board games", testArr);
+// console.log(board);
+
 
 //Game constructor
 function Game (title, genre){
@@ -5,10 +13,15 @@ function Game (title, genre){
   this.genre = genre;
 }
 
+//game organize prototype
+// Game.prototype.organize= function(){
+//   var gameLibraryArr = [];
+// };
+
 //adds game to the DOM
 Game.prototype.render = function() {
-  this.$element = $('<div>')
-    .append('<strong>Game</strong>: ' + this.title)
+  this.$element = $('.library')
+    .append('<div class="game"><strong>Game</strong>: ' + this.title + '</div>')
     .append('<br>')
     .append('<strong>Genre</strong>: ' + this.genre)
     .addClass('col-md-6');
@@ -16,46 +29,26 @@ Game.prototype.render = function() {
 };
 
 //game library constructor
-function GameLibrary (title, games) {
+function GameLibrary (title, gameArr) {
   this.title = title;
-  this.games = [];
+  this.gameArr = [];
 }
 
-//add games to the game library
-//not working?
-GameLibrary.prototype.addGames = function(instance){
-  return this.games.push(instance);
-};
-
 //adds game libraries to the dom
-//not right?
 GameLibrary.prototype.render = function() {
-  this.$element = $('<div>')
+  this.$element = $('<div class="library">')
     .append('<h3>' + this.title + '</h3>')
     .append('<br>')
-    .append(this.games)
+    .append(this.gameArr[0])
     .addClass('col-md-6');
     return this.$element;
 };
 
-//game instances
 
 
-//game libraries
-var cardGames = new GameLibrary ("Card Games");
-
-//add games
-cardGames.addGames(cards);
-
-
-
-
-
-
-
-
-
-
+GameLibrary.prototype.addGame = function(gameInstance) {
+  this.gameArr.push(gameInstance);
+};
 
 
 

@@ -1,4 +1,4 @@
-## JavaScript Game Library
+ ## JavaScript Game Library
 
 ***This repo contains my solution to the following exercise:***
 
