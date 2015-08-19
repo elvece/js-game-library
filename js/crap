@@ -1,0 +1,55 @@
+
+// dom crap
+    // //empty array of all entered games to start
+    // // var gameArr = [];
+
+    // //create new game
+    // var game = new Game (title, genre);
+    // console.log(game);
+    // //push new game into game array
+    // // gameArr.push(game);
+
+    // //create new game library
+    // var gameLibrary = new GameLibrary (genre);
+    // console.log(gameLibrary);
+    // console.log(gameLibrary.games);
+    // //add game to game library?
+    // gameLibrary.addGame(game);
+    // //render game library
+    // gameLibrary.render();
+    // //render game
+    // game.render();
+
+
+//main crap
+// //game organize prototype
+// // Game.prototype.organize= function(){
+// //   var gameLibraryArr = [];
+// // };
+
+// //adds game to the DOM
+// Game.prototype.render = function() {
+//   this.$element = $('.library')
+//     .append('<p><strong>Game</strong>: ' + this.title + '</p><br>')
+//     .append('<p><strong>Genre</strong>: ' + this.genre + '</p>');
+//   return this.$element;
+// };
+
+// //game library constructor
+// function GameLibrary (title) {
+//   this.title = title;
+//   this.games = [];
+// }
+
+// //adds game to game library
+// GameLibrary.prototype.addGame = function(game) {
+//   this.games.push(game);
+// };
+
+// //adds game libraries to the dom
+// GameLibrary.prototype.render = function() {
+//   this.$element = $('<div class="library">')
+//     .append('<h3>' + this.title + '</h3><br>');
+//     return this.$element;
+// };
+
