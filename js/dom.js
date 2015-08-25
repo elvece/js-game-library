@@ -33,9 +33,19 @@ $(document).on('ready', function() {
     var genre = $('#genre').val();//instance function
     //creates new Game instance
     var newGame = new Game(title, genre);
-    //current library
-    // var currentLibrary =
+    //get current library
+    var currentLibrary = $('.game-library').attr('id');
+    for (var i = 0; i < allGameLibraries.length; i++) {
+      if (currentLibrary === allGameLibraries[i].uuid){
+        allGameLibraries[i].addGame(newGame);
+        allGameLibraries[i].render();
+      }
+    }
 
+    //add new game into current library
+    // currentLibrary.addGame(newGame);
+    //re-render current game library?
+    //for loop through all game libraries, if currentLibrary, which should be the id of library we want, matches the uuid of whatever index in all game libraries, render that library
   });
 
 });
