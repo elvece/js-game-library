@@ -28,11 +28,11 @@ $(document).on('ready', function() {
   $('#add-game-submit').on('click', function(event){
     event.preventDefault();
     //gets value of enteretd title
-    var title = $('#title').val();//instance function
+    var $title = $('#title').val();//instance function
     //gets value of selected genre
-    var genre = $('#genre').val();//instance function
+    var $genre = $('#genre').val();//instance function
     //creates new Game instance
-    var newGame = new Game(title, genre);
+    var newGame = new Game($title, $genre);
     //get current library
     var currentLibrary = $('.game-library').attr('id');
     for (var i = 0; i < allGameLibraries.length; i++) {
@@ -41,7 +41,8 @@ $(document).on('ready', function() {
         allGameLibraries[i].render();
       }
     }
-
+    $('#title').val('');
+    $('#genre').val('');
     //add new game into current library
     // currentLibrary.addGame(newGame);
     //re-render current game library?
