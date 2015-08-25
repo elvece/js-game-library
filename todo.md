@@ -15,3 +15,4 @@
 
   -once selected, display all games in that library and have a button to add more games to that library
 
+*need a utility function to add newly entered game libraries to drop down menu

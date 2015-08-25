@@ -9,8 +9,8 @@ div {
   margin: 10px;
 }
 
-li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
+.game {
+  float:left;
+  padding-right: 15px;
 }
+

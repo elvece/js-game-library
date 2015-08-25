@@ -4,6 +4,19 @@ $(document).on('ready', function() {
   $('#add-game-form').hide();
   $('#add-game-btn').hide();
 
+
+  $('#all-libraries-dropdown').on('click', 'a', function(){
+    lucyLibrary.render();
+  });
+
+
+
+
+
+
+
+
+
   $('#add-button').on('click', function(event){
     event.preventDefault();
     //gets value of enteretd title

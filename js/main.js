@@ -1,3 +1,5 @@
+//all game libraries
+var allGameLibraries = [];
 
 //Game class constructor
 function Game (title, genre){
@@ -16,7 +18,8 @@ Game.prototype.render = function() {
   // Creates a list of game with genre
   var gameList = $('<ul>')
     .append('<li><strong>Title:</strong> ' + this.title + '</li>')
-    .append('<li><strong>Genre:</strong> ' + this.genre + '</li>');
+    .append('<li><strong>Genre:</strong> ' + this.genre + '</li>')
+    .css('list-style-type', 'none');
   // Creates div for gameList
   this.$element = $('<div class="game">')
     .append(gameList);
@@ -25,6 +28,7 @@ Game.prototype.render = function() {
 
 // GameLibrary render method
 GameLibrary.prototype.render = function() {
+  $('#all-library-games').empty();
   // Create elements for all games
   var renderedGames = this.games.map(function(item){
     return item.render();
@@ -37,20 +41,25 @@ GameLibrary.prototype.render = function() {
   return this.$element;
 };
 
+GameLibrary.prototype.addGame = function(game) {
+  this.games.push(game);
+};
+
 //testing instances
 var game1 = new Game('Catan', 'Board Game');
 var game2 = new Game('Rummy', 'Card Game');
-var game3 = new Game('Poker', 'Card Game');
-var game4 = new Game('Gin', 'Card Game');
+var game3 = new Game('WoW', 'Computer Game');
+var game4 = new Game('Zelda', 'Video Game');
+
+var lucyLibrary = new GameLibrary('Lucy\'s Library');
+lucyLibrary.addGame(game1);
+lucyLibrary.addGame(game2);
+lucyLibrary.addGame(game3);
+lucyLibrary.addGame(game4);
+// lucyLibrary.render();
 
 
-var funLibrary = new GameLibrary('Fun Library');
-funLibrary.games.push(game1, game2, game3, game4);
 
-console.log(game1);
-console.log(funLibrary);
-
-funLibrary.render();
 //for loop, i = children of current div
 
 
