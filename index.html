@@ -6,40 +6,76 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="css/main.css">
   </head>
+
   <body>
-  <div class="row text-center">
-    <h1>Game Library</h1>
-  </div>
-  <div class="row text-center">
-    <form class="form-horizontal">
-      <div class="form-group">
-        <label for="title" class="col-md-2 control-label">Title</label>
-        <div class="col-md-6">
-          <input type="text" class="form-control" id="title" placeholder="Title">
-        </div>
-      </div>
-      <div class="form-group">
-        <label for="genre" class="col-md-2 control-label">Genre</label>
-        <div class="col-md-6">
-            <select class="form-control" id="genre">
-              <option value="" selected disabled>Select Genre</option>
-              <option value="Board Games">Board Games</option>
-              <option value="Card Games">Card Games</option>
-              <option value="Computer Games">Computer Games</option>
-          </select>
-        </div>
-      </div>
-      <div class="form-group">
-        <div class="col-md-offset-2 col-md-6">
-          <button type="add" id= "add-button" class="btn btn-default">Add Game</button>
-        </div>
-      </div>
-    </form>
-    <div id="results">
-      <ul>
-      </ul>
+    <!-- header -->
+    <div class="row text-center">
+      <h1>Game Library</h1>
     </div>
-  </div>
+
+    <!-- dropdown for all game libraries -->
+    <div class="row text-center">
+      <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="libraryDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          Select a Game Library
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="libraryDropdown">
+          <li><a href="#">Lucy's Games</a></li>
+          <li><a href="#">Test Library</a></li>
+        </ul>
+      </div>
+      <p>OR</p>
+      <!-- button to add a new game library -->
+      <button type="button" id="add-library-btn" class="btn btn-default">Add a new Game Library</button>
+    </div>
+
+    <!-- show form to add a new game library...once game library created, then have add game button appear, when this button clicked, can show add game form -->
+    <div class="row" id="new-library-form">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="title" class="col-md-2 col-sm-2 col-xs-1 control-label">Game Library Name</label>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <input type="text" class="form-control" id="game-library" placeholder="Enter the name of your game library...">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- div to show all games in selected game library -->
+    <div class="row">
+      <div id="all-library-games">
+      </div>
+    </div>
+
+    <!-- add game form -->
+    <div class="row" id="add-game-form">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+        <form class="form-horizontal" id="game-form">
+          <div class="form-group">
+            <label for="title" class="col-md-2 col-sm-2 col-xs-1 control-label">Title</label>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <input type="text" class="form-control" id="title" placeholder="Enter the game title...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="genre" class="col-md-2 col-sm-2 col-xs-1 control-label">Genre</label>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <input type="text" class="form-control" id="genre" placeholder="Enter the game genre...">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- add game only button -->
+    <div class="row text-center">
+      <button type="add" id="add-game-btn" class="btn btn-default">Add Game</button>
+    </div>
+
+    <!-- scripts -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

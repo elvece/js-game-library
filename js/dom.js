@@ -1,10 +1,15 @@
 $(document).on('ready', function() {
+  // $('#all-library-games').hide();
+  $('#new-library-form').hide();
+  $('#add-game-form').hide();
+  $('#add-game-btn').hide();
+
   $('#add-button').on('click', function(event){
     event.preventDefault();
     //gets value of enteretd title
-    var title = $('#title').val();
+    var title = $('#title').val();//instance function
     //gets value of selected genre
-    var genre = $('#genre').val();
+    var genre = $('#genre').val();//instance function
     //creates new Game instance
     var newGame = new Game(title, genre);
     //new library instance
