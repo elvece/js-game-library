@@ -1,23 +1,31 @@
 $(document).on('ready', function() {
+
+  //on page load
   // $('#all-library-games').hide();
   $('#new-library-form').hide();
   $('#add-game-form').hide();
   $('#add-game-btn').hide();
+  addToDropdown();
 
-
+  //display games in selected game library
   $('#all-libraries-dropdown').on('click', 'a', function(){
-    lucyLibrary.render();
+    for (var i = 0; i < allGameLibraries.length; i++) {
+      if ($(this).attr('id') === allGameLibraries[i].title) {
+        allGameLibraries[i].render();
+      }
+    }
+    //show add game button
+    $('#add-game-btn').show();
   });
 
+  //show game form on add game button click
+  $('#add-game-btn').on('click', function(event){
+    event.preventDefault();
+    $('#add-game-form').show();
+  });
 
-
-
-
-
-
-
-
-  $('#add-button').on('click', function(event){
+  //submits data from game form to game library
+  $('#add-game-submit').on('click', function(event){
     event.preventDefault();
     //gets value of enteretd title
     var title = $('#title').val();//instance function
@@ -25,11 +33,15 @@ $(document).on('ready', function() {
     var genre = $('#genre').val();//instance function
     //creates new Game instance
     var newGame = new Game(title, genre);
-    //new library instance
-    var newLibrary = new GameLibrary("Lucy\'s Games");
-    // Push the new game into the library
-    newLibrary.games.push(newGame);
-    //render new game library
+    //current library
+    // var currentLibrary =
+
   });
+
 });
-//create game function
+
+
+
+
+
+

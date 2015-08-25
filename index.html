@@ -16,12 +16,11 @@
     <!-- dropdown for all game libraries -->
     <div class="row text-center">
       <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="all-libraries-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
           Select a Game Library
           <span class="caret"></span>
         </button>
-        <ul class="dropdown-menu" aria-labelledby="all-libraries-dropdown">
-          <li><a href="#">Lucy's Games</a></li>
+        <ul class="dropdown-menu" aria-labelledby="all-libraries-dropdown" id="all-libraries-dropdown">
           <li><a href="#">Test Library</a></li>
         </ul>
       </div>
@@ -31,7 +30,7 @@
     </div>
 
     <!-- show form to add a new game library...once game library created, then have add game button appear, when this button clicked, can show add game form -->
-    <div class="row" id="new-library-form">
+    <div class="row text-center" id="new-library-form">
       <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
         <form class="form-horizontal">
           <div class="form-group">
@@ -40,9 +39,9 @@
               <input type="text" class="form-control" id="game-library" placeholder="Enter the name of your game library...">
             </div>
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
+      <button type="submit" class="btn btn-default" id="add-game-library-submit">Submit</button>
     </div>
 
     <!-- div to show all games in selected game library -->
@@ -51,34 +50,36 @@
       </div>
     </div>
 
-    <!-- add game form -->
-    <div class="row" id="add-game-form">
-      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
-        <form class="form-horizontal" id="game-form">
-          <div class="form-group">
-            <label for="title" class="col-md-2 col-sm-2 col-xs-1 control-label">Title</label>
-            <div class="col-md-4 col-sm-4 col-xs-6">
-              <input type="text" class="form-control" id="title" placeholder="Enter the game title...">
-            </div>
-          </div>
-          <div class="form-group">
-            <label for="genre" class="col-md-2 col-sm-2 col-xs-1 control-label">Genre</label>
-            <div class="col-md-4 col-sm-4 col-xs-6">
-              <input type="text" class="form-control" id="genre" placeholder="Enter the game genre...">
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-
     <!-- add game only button -->
     <div class="row text-center">
       <button type="add" id="add-game-btn" class="btn btn-default">Add Game</button>
     </div>
 
+    <!-- add game form -->
+    <div class="row text-center" id="add-game-form">
+      <div class="col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+        <form class="form-horizontal" id="game-form">
+          <div class="form-group">
+            <label for="title" class="col-md-2 col-sm-2 col-xs-1 control-label">Title</label>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <input type="text" class="form-control" id="title" placeholder="Enter the game's title...">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="genre" class="col-md-2 col-sm-2 col-xs-1 control-label">Genre</label>
+            <div class="col-md-4 col-sm-4 col-xs-6">
+              <input type="text" class="form-control" id="genre" placeholder="Enter the game's genre...">
+            </div>
+          </div>
+        </form>
+      </div>
+      <button type="submit" class="btn btn-default" id="add-game-submit">Submit</button>
+    </div>
+
     <!-- scripts -->
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/utility.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/dom.js"></script>
   </body>

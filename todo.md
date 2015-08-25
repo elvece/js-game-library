@@ -5,6 +5,11 @@
 1. add a game to a game library and print on the screen
 1.
 
+*Add a new game to current gL:
+1. create a new game insrtance
+1. push into current library - get current library with set id of gL div, make number rather than title
+1. render in current library
+
 ### Layout
 -Game Library header - DONE
 -button to add a new game library -DONE
