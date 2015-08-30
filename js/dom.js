@@ -47,9 +47,45 @@ $(document).on('ready', function() {
 
   });
 
+  //displays new library from on add new game library button click
+  $('#add-library-btn').on('click', function(event){
+    event.preventDefault();
+    $('#new-library-form').show();
+  });
+
+  //submits data from add new library form, adds to drop down and displays add game form
+  $('#add-game-library-submit').on('click', function(event){
+    event.preventDefault();
+    //gets new library name
+    var $newLibraryName = $('#new-game-library-name').val();
+    //creates new Library instance
+    var newLibrary = new GameLibrary($newLibraryName);
+    //pushes to all game libraries array
+    allGameLibraries.push(newLibrary);
+    //adds to dropdown
+    addToDropdown();
+    //hide add new library form
+    $('#new-library-form').hide();
+    //display new game library as if selected from dropdown
+    for (var i = 0; i < allGameLibraries.length; i++) {
+      if (newLibrary.title === allGameLibraries[i].title) {
+        allGameLibraries[i].render();
+      }
+    }
+    //display add game button
+    $('#add-game-btn').show();
+
+  });
+
 });
 
-
+function getLibraryInfo (attr, arr){
+  for (var i = 0; i < arr.length; i++) {
+    if (attr === arr[i].title) {
+      arr[i].render();
+    }
+  }
+}
 
 
 
