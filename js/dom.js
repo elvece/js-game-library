@@ -25,7 +25,7 @@ $(document).on('ready', function() {
   });
 
   //submits data from game form to game library
-  $('#add-game-submit').on('click', function(event){
+  $('#add-game-submit').on('click', function(event){//change to on submit if add button within form (this will allow for submit on enter too)
     event.preventDefault();
     //gets value of enteretd title
     var $title = $('#title').val();//instance function
@@ -41,12 +41,10 @@ $(document).on('ready', function() {
         allGameLibraries[i].render();
       }
     }
+    //clears form
     $('#title').val('');
     $('#genre').val('');
-    //add new game into current library
-    // currentLibrary.addGame(newGame);
-    //re-render current game library?
-    //for loop through all game libraries, if currentLibrary, which should be the id of library we want, matches the uuid of whatever index in all game libraries, render that library
+
   });
 
 });
