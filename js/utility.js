@@ -5,7 +5,7 @@ function addToDropdown(){
   var $dropdown =  $('#all-libraries-dropdown');
   $dropdown.empty();
   for (var i = 0; i < allGameLibraries.length; i++) {
-      $dropdown.append('<li><a href="#" id="'+allGameLibraries[i].title+'">'+allGameLibraries[i].title+'</a></li>');
+      $dropdown.append('<li><a href="#" id="' +allGameLibraries[i].uuid+ '">' +allGameLibraries[i].title+ '</a></li>');
   }
 }
 
@@ -21,10 +21,26 @@ function generateUUID() {
 }
 
 //gets library info from array based on attribute (id, title) and renders that library
-function getLibraryInfo (attr, arr){
+function getLibraryInfo (attr, arr, arrAttr){
   for (var i = 0; i < arr.length; i++) {
-    if (attr === arr[i].title) {
+    if (attr === arr[i].arrAttr) {
       arr[i].render();
     }
   }
 }
+
+//rendering library from dropdown selection
+// for (var i = 0; i < allGameLibraries.length; i++) {
+//   if ($(this).attr('id') === allGameLibraries[i].title) {
+//     allGameLibraries[i].render();
+//   }
+// }
+
+//new game library
+// for (var i = 0; i < allGameLibraries.length; i++) {
+//   if (newLibrary.title === allGameLibraries[i].title) {
+//     allGameLibraries[i].render();
+//   }
+// }
+
+

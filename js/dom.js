@@ -12,7 +12,14 @@ $(document).on('ready', function() {
     //gets the selected library value
     var selectedLibrary = $(this).attr('id');
     //gets all the info for the selcted library from all game libraries array
-    getLibraryInfo(selectedLibrary, allGameLibraries);
+    // getLibraryInfo(selectedLibrary, allGameLibraries, uuid);
+
+    for (var i = 0; i < allGameLibraries.length; i++) {
+      if ($(this).attr('id') === allGameLibraries[i].uuid) {
+        allGameLibraries[i].render();
+      }
+    }
+
     //show add game button
     $('#add-game-btn').show();
   });
@@ -66,7 +73,7 @@ $(document).on('ready', function() {
     //hide add new library form
     $('#new-library-form').hide();
     //display new game library as if selected from dropdown by grabbing that libraries info from all game libraries array
-    getLibraryInfo(newLibrary.title, allGameLibraries);
+    getLibraryInfo(newLibrary.title, allGameLibraries, title);
     //display add game button
     $('#add-game-btn').show();
 

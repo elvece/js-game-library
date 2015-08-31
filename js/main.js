@@ -36,7 +36,7 @@ GameLibrary.prototype.render = function() {
   });
   // Render game library element
   this.$element = $('#all-library-games')
-    .append('<div class="game-library" id="'+this.uuid+'">')
+    .append('<div class="game-library" id="' +this.uuid+ '">')
     .append('<h3 class="text-center">' +this.title+ '</h3>')
     .append($('<div class="games">').append(renderedGames));
   return this.$element;
@@ -58,6 +58,7 @@ lucyLibrary.addGame(game2);
 lucyLibrary.addGame(game3);
 lucyLibrary.addGame(game4);
 allGameLibraries.push(lucyLibrary);
+console.log(lucyLibrary);
 // lucyLibrary.render();
 
 
