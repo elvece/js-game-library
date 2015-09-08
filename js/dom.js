@@ -81,6 +81,7 @@ $(document).on('ready', function() {
 
 });
 
+//when toggle between libraries, hide add game form
 
 
 
